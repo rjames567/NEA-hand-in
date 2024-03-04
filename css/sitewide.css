@@ -1,0 +1,1496 @@
+/* -------------------------------------------------------------------------- */
+/* Colours                                                                    */
+/* -------------------------------------------------------------------------- */
+:root {
+  --blue: #24247b;
+  --grey: #666666;
+  --light-grey: #b7b7b7;
+  --red: #990000;
+  --yellow: #e69138ff;
+  --light-blue: #24247bbe;
+  --light-red: #990000bf;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Global Formatting                                                          */
+/* -------------------------------------------------------------------------- */
+body, html {
+  background-color: white;
+  font-family: Helvetica, Arial;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Site-wide classes                                                          */
+/* -------------------------------------------------------------------------- */
+.hidden, .template{
+  display: none !important;
+}
+
+.row {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.row:last-child {
+  margin: 20px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* HTML tags                                                                  */
+/* -------------------------------------------------------------------------- */
+h1 {
+  padding: 0;
+  font-size: 25px;
+  text-align: left;
+}
+
+hr {
+  background-color: var(--light-grey);
+  height: 1px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  padding: 0 20px;
+  min-height: 72%; /* Set height to fill minimum space between header and footer */
+}
+
+li {
+  list-style-type: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Link Hover Underlines                                                      */
+/* -------------------------------------------------------------------------- */
+/* https://nerdcowboy.com/blog/sliding-underlined-links/ */
+a.highlight {
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue), var(--blue));
+  background-size: 0% 2px;
+  background-position-y: 100%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+  width: fit-content; /* Ensure underline is not larger than necessary */
+}
+
+a.highlight:hover {
+  background-size: 100% 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header                                                                     */
+/* -------------------------------------------------------------------------- */
+header .title {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 2px solid var(--light-grey);
+}
+
+header nav {
+  border-bottom: 2px solid var(--light-grey);
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul {
+  padding: 0;
+}
+
+header nav.top ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul li {
+  display: inline-block;
+  border-right: 2px solid var(--blue);
+  padding: 0 5px;
+}
+
+header nav ul li:last-child {
+  border: none;
+}
+
+header nav ul li a {
+  color: var(--blue);
+  padding: 10px;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+  color: white;
+  background-color: var(--blue);
+}
+
+header nav ul li:first-child {
+  padding-left: 20px;
+}
+
+header nav ul li:last-child {
+  padding-right: 20px;
+}
+
+header nav ul li.pseudo-last { /* Easy way of removing border on both links. */
+  padding-right: 20px;
+  border: none;
+}
+
+header nav.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Search bar                                                                 */
+/* -------------------------------------------------------------------------- */
+header nav div.search {
+  margin-right: 20px;
+  border: 2px solid var(--blue)
+}
+
+header nav form {
+  border: none;
+  
+}
+
+header nav form input {
+  border: none;
+  outline: none;
+  padding: 9px;
+  font-size: 14px;
+  width: 250px;
+}
+
+header nav form button {
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  height: 38px;
+  width: 38px;
+}
+
+header nav form button {
+  font-size: 20px;
+}
+
+header nav form button:hover {
+  background-color: var(--light-blue);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Search result - General                                                    */
+/* -------------------------------------------------------------------------- */
+.search-container .row {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--light-grey);
+  padding: 20px 0;
+  align-items: baseline;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.search-container .row .match-strength {
+  margin: 0;
+  font-size: 14px;
+  color: var(--grey);
+}
+
+.search-container .row .author,
+.search-container .row .genre-button {
+  font-size: 20px;
+}
+
+.search-container .row:last-child {
+  border-bottom: none;
+  padding: 0 0 20px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Search result - Books                                                      */
+/* -------------------------------------------------------------------------- */
+.search-container .row.book .main-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container .row.book .main-content {
+  text-align: left;
+}
+
+.search-container .row.book .main-content .author-name {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--grey);
+}
+
+.search-container .row.book .cover {
+  margin-right: 20px;
+}
+
+.search-container .row.book .cover img {
+  height: 150px;
+  width: auto;
+}
+
+.search-container .row.book a {
+  display: block;
+}
+
+.search-container .row.book a.title {
+  font-size: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Search result - Genres                                                     */
+/* -------------------------------------------------------------------------- */
+.search-container .row .genre-button {
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up                                                            */
+/* -------------------------------------------------------------------------- */
+.account-popups .window hr {
+  border: 1px solid var(--light-grey);
+  margin-bottom: 20px;
+}
+
+.account-popups p {
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up - Popups                                                   */
+/* -------------------------------------------------------------------------- */
+.account-popups {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.account-popups .window {
+  display: none; /* Hide by default */
+  height: 100%;
+  width: 100%;
+  overflow: none;
+  background-color: var(--light-grey);
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.account-popups .pop-up-content {
+  background-color: white;
+  margin: 5% auto 15% auto;
+  width: 80%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up - Inputs                                                   */
+/* -------------------------------------------------------------------------- */
+.account-popups input[type=text], .account-popups input[type=password] {
+  /* Minimum specification - affects all text inputs in the div */
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+.account-popups .pop-up-content input:focus {
+  background-color: var(--light-grey);
+  outline: none;
+}
+
+.account-popups .pop-up-content .container {
+  padding: 16px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up - Change between popups                                    */
+/* -------------------------------------------------------------------------- */
+.account-popups .change-popup-message {
+  font-size: 12px;
+  margin-top: 10px
+}
+
+.account-popups .change-popup-message a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.account-popups .change-popup-message a:hover {
+  color: black;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up - Alerts                                                   */
+/* -------------------------------------------------------------------------- */
+.account-popups p.alert {
+  display: none;
+  color: var(--red);
+  margin: 0 0 10px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sign In/Sign Up - Buttons                                                  */
+/* -------------------------------------------------------------------------- */
+.account-popups .window button {
+  color: white;
+  padding: 15px 20px;
+  margin: 8px 0;
+  float: left;
+  width: 50%;
+  border: none;
+}
+
+.account-popups .window .cancel-button {
+  background-color: var(--red);
+}
+
+.account-popups .window .sign-up-button, .account-popups .window .sign-in-button {
+  background-color: var(--blue);
+}
+
+.account-popups .window .cancel-button:hover {
+  background-color: var(--light-red);
+}
+
+.account-popups .window .sign-up-button:hover {
+  background-color: var(--light-blue);
+}
+
+/* Needed to prevent buttons from being outside pop-up. */
+.account-popups .window .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reading list                                                               */
+/* -------------------------------------------------------------------------- */
+main .container {
+  min-height: inherit; /* For whatever reason, 100% does not work but this does. */
+  position: absolute; /* Needed to set height */
+  display: flex;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reading list - List Maintenance                                            */
+/* -------------------------------------------------------------------------- */
+.edit-lists button {
+  display: inline-block;
+  height: 40px;
+  width: 30%;
+  color: white;
+  margin: 0 30px 20px 30px; /* Add gap to left and right, and create gap to bottom of the page */
+  border: none;
+}
+
+.edit-lists button.delete-list {
+  background-color: var(--red);
+  float: right;
+}
+
+.edit-lists button.delete-list:hover {
+  background-color: var(--light-red);
+}
+
+.edit-lists button.create-list {
+  background-color: var(--blue);
+  float: left;
+}
+
+.edit-lists button.create-list:hover {
+  background-color: var(--light-blue);
+}
+
+.edit-lists .add-container {
+  float: left;
+  width: 30%;
+  height: 40px;
+  margin: 0 30px 20px 30px;
+  border: 2px solid var(--blue);
+}
+.edit-lists .add-container input[type=text] {
+  float: left;
+  height: 39px;
+  padding: 0 0 0 10px;
+  width: calc(100% - 54px);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.edit-lists .add-container input[type=text]:focus {
+  background-color: var(--light-grey);
+}
+
+.edit-lists .add-container button {
+  float: right;
+  background-color: var(--blue);
+  cursor: pointer;
+  width: 42px;
+  height: 40px;
+  margin: 0;
+  border: 1px solid var(--blue);
+}
+
+.edit-lists .add-container button:hover {
+  background-color: var(--light-blue);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reading list - Navigation                                                  */
+/* -------------------------------------------------------------------------- */
+.container .content {
+  margin: 0 0 10px 10px;
+  padding: 0;
+}
+
+.container .navigation {
+  background-color: var(--blue);
+  border: solid 3px var(--blue);
+  margin: 10px 0; /* Add gap between top and bottom of navigation bar */
+  min-width: 160px; /* Any longer will wrap. Fits for default lists*/
+  max-width: 160px; /* Ensure that width doesn't increase either */
+  min-height: fit-content;
+}
+
+.container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container ul li {
+  text-decoration: none;
+}
+
+.container ul li a {
+  display: block;
+  color: white;
+  padding: 15px 15px;
+  border-bottom: solid 1px white;
+}
+
+.container ul li a:hover, .container ul li a.active {
+  background-color: white;
+  color: var(--blue);
+  padding: 15px 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reading list - books                                                       */
+/* -------------------------------------------------------------------------- */
+.book {
+  padding: 10px 20px 0 5px;
+}
+
+.recommendation-entries .book:nth-last-child(1) hr,
+.my-books .book:nth-last-child(2) hr { /* Last child would not remove the last hr between the last entry and buttons */
+  display: none;
+}
+
+.diary-entry .content, .book .content {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.diary-entry .main-content,
+.book .main-content {
+  padding: 0 20px;
+  width: -webkit-fill-available;
+}
+
+.diary-entry .cover img,
+.book .cover img {
+  padding: 20px 0;
+  width: 150px;
+}
+
+.diary-entry .book,
+.book .title {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.diary-entry .author,
+.book .author {
+  display: block;
+  font-size: 20px;
+}
+
+.book p {
+  font-size: 15px;
+  padding: 0;
+}
+
+.author-rating-container .rating,
+.diary-entry .rating,
+.book .rating {
+  font-size: 20px;
+  color: var(--yellow);
+}
+
+.diary-entry .rating-container,
+.book .rating-container {
+  margin-left: auto;
+}
+
+.diary-entry .top-row-container,
+.book .top-row-container {
+  display: flex;
+  align-items: center;
+}
+
+.diary-entry .book-info,
+.book .book-info {
+  display: block;
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+
+.diary-entry .book-info:last-child,
+.book .book-info:last-child {
+  padding-bottom: 0;
+}
+
+.diary-entry .right-content,
+.book .right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 180px;
+}/* Date will always be the same width, so each book will look the same.*/
+
+.book .synopsis {
+  height: 220px;
+  overflow: hidden; /* Remove overflow outside div - prevent extra white space*/
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); /* Fade to transparent over distance */
+}
+
+.diary-entry .rating-container .about-review,
+.book .about-review {
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.book .right-content .actions {
+  height: fit-content;
+}
+
+.diary-entry .right-content button.delete,
+.book .right-content .actions button {
+  font-size: 13px;
+  padding: 5px 10px;
+  border: none;
+}
+
+.diary-entry .right-content button.delete,
+.book button.delete {
+  float: right;
+  color: white;
+  background-color: var(--red);
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+.book button.read {
+  color: white;
+  background-color: var(--blue);
+  height: 40px;
+}
+
+.book button.read i {
+  padding-right: 5px; /* Add spacing between plus and text */
+}
+
+.book button.read:hover {
+  background-color: var(--light-blue);
+}
+
+.diary-entry .right-content button.delete:hover,
+.book button.delete:hover {
+  background-color: var(--light-red);
+}
+
+.book ol {
+  margin: 0;
+  list-style-type: "-    ";
+}
+
+.book li {
+  font-size: 13px;
+  padding-bottom: 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book summaries                                                             */
+/* -------------------------------------------------------------------------- */
+.book-summary {
+  display: inline-block;
+  padding: 0 15px;
+  margin: 0 5px;
+  width: 220px; /* To change this, the JS needs to change too. */
+}
+
+.book-summary img {
+  width: -webkit-fill-available;
+}
+
+.book-summary .title {
+  display: block;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+}
+
+.book-summary .author {
+  display: block;
+  color: var(--red);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Genre Pages                                                                */
+/* -------------------------------------------------------------------------- */
+.genre-book-items {
+  text-align: center; /* Align summaries to the center */
+  padding-bottom: 15px; /* Add spacing to bottom of page (top is included by summaries. Margin does not work */
+}
+
+.genre-book-items .book-summary {
+  margin-top: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - General                                                       */
+/* -------------------------------------------------------------------------- */
+.book-about {
+  margin-top: 20px;
+}
+.book-about {
+  display: flex;
+}
+
+.book-about .right { /* Left only needs width specified as fit-content, which is handled by flex */
+  flex-grow: 100; /* Will wrap words on page */
+  padding-left: 20px;
+  max-width: 95%;
+}
+
+.book-about .left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Standard Tags                                                 */
+/* -------------------------------------------------------------------------- */
+.book-about h1 {
+  margin: 0;
+}
+
+.book-about h2 {
+  margin:  10px 0;
+  font-size: 19px;
+  color: var(--grey);
+  font-weight: lighter;
+}
+
+.book-about h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Left column                                                   */
+/* -------------------------------------------------------------------------- */
+.book-about .left img {
+  padding-top: 30px;
+  width: 200px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Book details                                                  */
+/* -------------------------------------------------------------------------- */
+.book-about .top-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.author-about .name p {
+  color: grey; /* Slightly lighter than var(--light-grey) */
+  font-size: 13px;
+}
+
+.book-about .book-details .isbn {
+  padding-right: 20px;
+}
+
+.book-details {
+  color: var(--grey);
+  font-size: 15px;
+}
+
+.book-about .rating {
+  margin: 0 20px 0 auto;
+  color: var(--yellow);
+  font-size: 20px;
+}
+
+.book-about p.average-review {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 20px;
+  color: black;
+  font-style: italic;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Synopsis                                                      */
+/* -------------------------------------------------------------------------- */
+.book-about .synopsis {
+  padding: 5px 0 15px 0;
+  min-width: 100px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Genres                                                        */
+/* -------------------------------------------------------------------------- */
+.book-about .genres h3 {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.book-about ol {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.book-about ol li {
+  display: inline-block;
+}
+
+.book-about ol li a {
+  margin-right: 13px; /* Margin so the underline does not include the gap */
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Author Summary                                                */
+/* -------------------------------------------------------------------------- */
+.book-about .author-about {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: solid 2px var(--light-grey);
+  border-bottom: solid 2px var(--light-grey);
+}
+
+.author-about .name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.author-about .name p {
+  margin-top: 5px; /* Remove the large space between the author name and number of followers */
+}
+
+.author-about .buttons {
+  margin: 0 30px 0 auto; /* Indented from the right as it looks out of place otherwise */
+  font-size: 15px; /* Slightly smaller than the h3 for the author's name */
+}
+
+.author-about button {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+}
+
+.author-about button:hover {
+  background-color: var(--light-blue);
+}
+
+.book-about .author-about .about {
+  max-height: 220px;
+  overflow: hidden; /* Remove overflow outside div - prevent extra white space*/
+  margin-right: 115px; /* Add space between the about and the follow button */
+  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent); /* Fade to transparent over distance */
+}
+
+.author-about .about p {
+  margin-top: 0; /* Remove the large space between the text and author name */
+  font-size: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Book Stats                                                    */
+/* -------------------------------------------------------------------------- */
+.book-about .book-stats {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  border-bottom: solid 2px var(--light-grey);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 15px
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Similar Books                                                 */
+/* -------------------------------------------------------------------------- */
+.book-about .book-summary {
+  margin-bottom: 10px;
+}
+
+.book-about .similar-books {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: solid 2px var(--light-grey);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Leave a Review                                                */
+/* -------------------------------------------------------------------------- */
+.book-about .user-review {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 2px var(--light-grey);
+}
+
+.new-diary-entry .overall-rating-entry .rating-entry-container,
+.new-diary-entry .plot-rating-entry .rating-entry-container,
+.new-diary-entry .character-rating-entry .rating-entry-container,
+.book-about .user-review .overall-rating-entry .rating-entry-container,
+.book-about .user-review .plot-rating-entry .rating-entry-container,
+.book-about .user-review .character-rating-entry .rating-entry-container { /* Prevent the cursor changing between the buttons and looking wrong */
+  display: inline-block;
+  cursor: pointer;
+}
+
+.new-diary-entry .overall-rating-entry p,
+.new-diary-entry .plot-rating-entry p,
+.new-diary-entry .character-rating-entry p,
+.book-about .user-review .overall-rating-entry p,
+.book-about .user-review .plot-rating-entry p,
+.book-about .user-review .character-rating-entry p {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 5px; /* Using shorthand changes the padding at the top from the default */
+}
+
+.new-diary-entry .character-rating-entry,
+.book-about .user-review .leave-review .character-rating-entry {
+  margin-bottom: 25px;
+}
+
+/* https://stackoverflow.com/a/73854551 */
+.new-diary-entry .rating-entry-container button,
+.book-about .user-review .rating-entry-container button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  background-color: white;
+  color: var(--light-grey);
+}
+
+.new-diary-entry .overall-rating-entry:hover button,
+.new-diary-entry .plot-rating-entry:hover button,
+.new-diary-entry .character-rating-entry:hover button,
+.book-about .user-review .overall-rating-entry:hover button,
+.book-about .user-review .plot-rating-entry:hover button,
+.book-about .user-review .character-rating-entry:hover button {
+  color: var(--yellow);
+}
+
+.new-diary-entry .overall-rating-entry button:hover ~ button,
+.new-diary-entry .plot-rating-entry button:hover ~ button,
+.new-diary-entry .character-rating-entry button:hover ~ button,
+.book-about .user-review .overall-rating-entry button:hover ~ button,
+.book-about .user-review .plot-rating-entry button:hover ~ button,
+.book-about .user-review .character-rating-entry button:hover ~ button {
+  color: var(--light-grey);
+}
+
+.new-diary-entry button.highlight,
+.book-about .user-review button.highlight {
+  color: var(--yellow);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Summary                                                       */
+/* -------------------------------------------------------------------------- */
+.book-about .user-review input[type=text] {
+  display: block;
+  border: none;
+  font-size: 16px;
+  width: calc(100% - 20px); /* Remove page padding from 100%, as it is included for some reason */
+  padding: 5px 0 10px 0;
+}
+
+.book-about .user-review input[type=text]:focus {
+  outline: solid 1px var(--light-grey);
+  padding: 5px 0.5rem 10px 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Body                                                          */
+/* -------------------------------------------------------------------------- */
+.book-about .user-review textarea {
+  border: none;
+  font-size: 16px;
+  padding: 5px 0 10px 0;
+}
+
+.book-about .user-review textarea:focus {
+  outline: solid 1px var(--light-grey);
+  padding: 5px 0.5rem 10px 0.5rem;
+}
+
+/* https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ */
+.new-diary-entry .textarea-grow-container,
+.book-about .user-review .textarea-grow-container {
+  display: grid;
+}
+
+.book-about .user-review .textarea-grow-container::after {
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.book-about .user-review .textarea-grow-container > .book-about .user-review textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.book-about .user-review .textarea-grow-container > textarea, .book-about .user-review .textarea-grow-container::after {
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Submit                                                        */
+/* -------------------------------------------------------------------------- */
+.initial-preference button,
+.new-diary-entry .new-entry button.submit-entry,
+.book-about .user-review button.submit-review {
+  margin: 10px 30px 0 0;
+  font-size: 15px; /* Slightly smaller than the h3 for the author's name */
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+}
+
+.initial-preference button:hover,
+.book-about .user-review button.submit-review:hover {
+  background-color: var(--light-blue);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Existing Review                                               */
+/* -------------------------------------------------------------------------- */
+.diary-entry .ratings i,
+.book-about .overall-rating i,
+.book-about .plot-rating i,
+.book-about .character-rating i {
+  color: var(--yellow);
+  font-size: 16px;
+}
+
+.diary-entry .ratings p,
+.book-about .overall-rating p,
+.book-about .plot-rating p,
+.book-about .character-rating p {
+  display: inline-block; /* Makes the label be next to the icons */
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Book Review Summary                                           */
+/* -------------------------------------------------------------------------- */
+.book-about .reviews .average-review-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.book-about .reviews .average-review-container i {
+  color: var(--yellow);
+  font-size: 35px;
+}
+
+.book-about .reviews .average-review-container p {
+  font-size: 25px;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Review Distribution                                           */
+/* -------------------------------------------------------------------------- */
+.book-about .reviews .review-distribution {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 2px var(--light-grey);
+}
+
+.book-about .reviews .review-distribution .bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.book-about .reviews .review-distribution em {
+  color: var(--grey);
+}
+
+.book-about .reviews .review-distribution span.number {
+  padding-right: 10px; /* Add spacing between the number and percentage */
+}
+
+.book-about .reviews .review-distribution meter {
+  width: 80%;
+  margin: 5px 10px;
+  padding: 0 10px;
+}
+
+.book-about .reviews .review-distribution meter::-webkit-meter-bar {
+  border-radius: 0;
+  border: none;
+  height: 25px;
+  background-color: var(--light-grey); /* This changes the background colour*/
+}
+
+.book-about .reviews .review-distribution meter::-webkit-meter-optimum-value {
+  background: var(--yellow); /* Optimum is not defined, so this applies to all values*/
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Reviews                                                       */
+/* -------------------------------------------------------------------------- */
+.book-about .reviews .user-reviews .review {
+  display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: solid 2px var(--light-grey);
+}
+
+.book-about .reviews .user-reviews .review:last-child {
+  border-bottom: none; /* Removes the on the bottom of the final review */
+}
+
+.book-about .reviews .user-reviews .review:last-child {
+  margin-bottom: 0; /* Prevent a large gap between the bottom of review and the page end */
+}
+
+.book-about .reviews .user-reviews .review .user b {
+  font-size: 18px
+}
+
+.book-about .reviews .user-reviews .review .review-main {
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-about .reviews .user-reviews .review .review-main .overall-rating p {
+  margin-top: 0;
+}
+
+.book-about .reviews .user-reviews .review .review-main .review-body p:last-child {
+  margin-bottom: 0; /* Prevent the margin on the p tag effecting the spacing to the next review */
+}
+
+.book-about .reviews .user-reviews .review .review-main .summary {
+  margin-top: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Purchase Button                                               */
+/* -------------------------------------------------------------------------- */
+.book-about a.purchase_link {
+  font-size: 15px; /* Slightly smaller than the h3 for the author's name */
+  padding: 10px 0;
+  margin-top: 15px;
+  width: 160px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+}
+
+.book-about a.purchase_link:hover {
+  background-color: var(--light-blue);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Review submission alert                                       */
+/* -------------------------------------------------------------------------- */
+.new-diary-entry .alert,
+.book-about .leave-review .alert {
+  display: none;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Reading List Button                                           */
+/* -------------------------------------------------------------------------- */
+.book-about button.add-list {
+  font-size: 15px; /* Slightly smaller than the h3 for the author's name */
+  padding: 10px 15px; /* Keep padding on sides for long names to change the wrapping */
+  width: 160px;
+  margin-top: 15px;
+  border: none;
+  background-color: var(--red);
+  color: white;
+}
+
+.book-about button.add-list:hover {
+  background-color: var(--light-red);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Delete Review                                                 */
+/* -------------------------------------------------------------------------- */
+.book-about .existing-review button.delete-review {
+  color: white;
+  background-color: var(--red);
+  margin-right: 30px;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border: none;
+}
+
+.book-about .existing-review button.delete-review:hover {
+  background-color: var(--light-red);
+}
+
+.book-about .existing-review .delete-container {
+  display: flex; /* Float right would make it come outside of the div. This does not. */
+  justify-content: flex-end;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages - Select List popup                                             */
+/* -------------------------------------------------------------------------- */
+/* https://www.w3schools.com/howto/howto_css_modals.asp */
+.new-diary-entry,
+.reading-list-selection {
+  display: flex;
+  align-content: center;
+  justify-content: center; /* Align the popup with the center of the display */
+  flex-wrap: wrap;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  min-width: 100%; /* Full width */
+  min-height: 100vh; /* Full height  */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.reading-list-selection .content {
+  background-color: white;
+  padding: 20px;
+  max-width: 80%; /* It will expand to 80% of display before word wrap */
+}
+
+.reading-list-selection ul {
+  padding: 10px 30px;
+  margin: 0;
+}
+
+.reading-list-selection button {
+  display: flex;
+  align-items: center; /* Align Icon with center of any word wrap */
+  border: none;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background-color: white;
+}
+
+.reading-list-selection li:last-child button {
+  margin-bottom: 0;
+}
+
+.reading-list-selection button:not(.inactive):hover .list-name { /* Extra specification prevents it changing icons */
+  text-shadow: 1px 0 black; /* Bold affect without changing text size */
+}
+
+.reading-list-selection button i { /* Change icons through CSS only. Avoids assining/checking values in JS for return */
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.reading-list-selection button i.hover {
+  display: none;
+}
+
+.reading-list-selection button:not(.inactive):hover i:not(.hover) {
+  display: none;
+}
+
+.reading-list-selection button:not(.inactive):hover i.hover {
+  display: inline-block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Book Pages                                                                 */
+/* -------------------------------------------------------------------------- */
+.author-book-items {
+  text-align: center; /* Align summaries to the center */
+  padding-bottom: 15px; /* Add spacing to bottom of page (top is included by summaries. Margin does not work */
+}
+
+.author-book-items .book-summary {
+  margin-top: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Diary - New entry button                                                   */
+/* -------------------------------------------------------------------------- */
+.entry-management {
+  margin: 10px 0;
+  text-align: center; /* Align button with center of screen */
+}
+
+button.new-entry {
+  border: none;
+  background: var(--blue);
+  padding: 12px 20px;
+  color: white;
+  font-size: 16px
+}
+
+button.new-entry:hover {
+  background-color: var(--light-blue);
+}
+
+button.new-entry i {
+  padding-right: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Diary - Diary Entries                                                      */
+/* -------------------------------------------------------------------------- */
+.diary-entry .right-content {
+  min-width: 200px;
+}
+
+.diary-entry .content {
+  margin-top: 20px;
+}
+
+.diary-entry .main-content {
+  min-width: calc(100% - 200px - 170px); /* Fix the width so it does not get smaller than the page */
+}
+
+.diary-entry .right-content button {
+  margin: 0 20px 0 auto;
+}
+
+.diary-entry .book {
+  padding: 10px 0 5px 0;
+}
+
+.diary-entry .ratings {
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Diary - New Diary Entry                                                    */
+/* -------------------------------------------------------------------------- */
+.new-diary-entry form {
+  background-color: white;
+  padding: 10px;
+  width: 80%;
+  height: fit-content; /* Fit form to the text area */
+}
+
+.new-diary-entry select {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  width: calc(100% - 20px);
+  margin: 5px 10px 10px 10px;
+  padding: 10px;
+  border: none;
+  background-color: white;
+}
+
+.new-diary-entry select:hover {
+  background-color: lightgray;
+}
+
+.new-diary-entry option {
+  color: black;
+  padding: 10px;
+  background-color: white;
+}
+
+/* The hover cannot be styled as it is rendered by the OS. */
+/*  https://stackoverflow.com/questions/10484053/change-select-list-option-background-colour-on-hover */
+
+.new-diary-entry textarea {
+  font: inherit;
+  display: block;
+  width: calc(100% - 20px);
+  resize: none;
+  border: none;
+  font-size: 16px;
+  padding: 5px 0 10px 0;
+  height: 40vh; /* Must be of viewport as height of parent is not set */
+}
+
+.new-diary-entry textarea:focus {
+  outline: solid 1px var(--light-grey);
+  padding: 5px 0.5rem 10px 0.5rem;
+}
+
+.new-diary-entry input[type=text],
+.new-diary-entry input[type=number] {
+  display: block;
+  border: none;
+  font-size: 16px;
+  width: calc(100% - 20px);
+  padding: 5px 0 10px 0;
+}
+
+.new-diary-entry input[name=review] {
+  margin-left: 10%;
+}
+
+.new-diary-entry input[type=checkbox] {
+  margin-right: 10px;
+}
+
+.new-diary-entry input[type=text]:focus,
+.new-diary-entry input[type=number]:focus {
+  outline: solid 1px var(--light-grey);
+  padding: 5px 0.5rem 10px 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Home Page                                                                  */
+/* -------------------------------------------------------------------------- */
+.row:last-child {
+  padding-bottom: 5px;
+}
+
+.row:last-child hr {
+  display: none; /* Ensure that the last entry does not have an underline */
+}
+
+.row .books {
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Recommendations                                                            */
+/* -------------------------------------------------------------------------- */
+.recommendation-entries .book ol {
+  padding-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Recommendations - Preferences                                              */
+/* -------------------------------------------------------------------------- */
+.initial-preference {
+  margin: 20px 0;
+}
+.initial-preference form.preferences .selection-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.initial-preference input[type=checkbox] {
+  margin: 0 10px 10px 0;
+  accent-color: var(--blue);
+}
+
+.initial-preference button {
+  float: right;
+  margin: 20px 20px 0 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Author Pages                                                               */
+/* -------------------------------------------------------------------------- */
+.author-about h1 {
+  font-weight: bold;
+  margin: 20px 0 0 0;
+}
+
+.author-genre-items ol {
+  text-align: center;
+  padding-bottom: 16px; /* Changing the margin has no effect, and already adds 16px to the top, so this fices the
+  padding at the bottom of the page */
+}
+
+.author-genre-items ol li {
+  display: inline-block;
+  padding: 10px 30px 10px 0;
+}
+
+.author-rating-container {
+  margin: 16px;
+}
+
+.author-rating-container .rating {
+  display: inline-block;
+}
+
+.author-rating-container .about-review {
+  display: inline-block;
+  float: right;
+}
+
+.author-rating-container .rating-container {
+  display: inline-block;
+}

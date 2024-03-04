@@ -1,0 +1,8 @@
+/*!
+ * Javascript Cookie v1.5.0
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2014 Klaus Hartl
+ * Released under the MIT license
+ */
+ !function(e){var r;if("function"==typeof define&&define.amd)define(["jquery"],e);else if("object"==typeof exports){try{r=require("jquery")}catch(t){}module.exports=e(r)}else window.Cookies=e(window.jQuery)}(function(e){var r=/\+/g;function t(e){return u.raw?e:encodeURIComponent(e)}function n(e){return u.raw?e:decodeURIComponent(e)}function i(e,t){var n=u.raw?e:function e(t){0===t.indexOf('"')&&(t=t.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return t=decodeURIComponent(t.replace(r," ")),u.json?JSON.parse(t):t}catch(n){}}(e);return c(t)?t(n):n}function o(){for(var e,r,t=0,n={};t<arguments.length;t++)for(e in r=arguments[t])n[e]=r[e];return n}function c(e){return"[object Function]"===Object.prototype.toString.call(e)}var u=function(e,r,s){if(arguments.length>1&&!c(r)){if("number"==typeof(s=o(u.defaults,s)).expires){var a,f=s.expires,p=s.expires=new Date;p.setMilliseconds(p.getMilliseconds()+864e5*f)}return document.cookie=[t(e),"=",(a=r,t(u.json?JSON.stringify(a):String(a))),s.expires?"; expires="+s.expires.toUTCString():"",s.path?"; path="+s.path:"",s.domain?"; domain="+s.domain:"",s.secure?"; secure":""].join("")}for(var l=e?void 0:{},v=document.cookie?document.cookie.split("; "):[],d=0,g=v.length;d<g;d++){var y=v[d].split("="),h=n(y.shift()),j=y.join("=");if(e===h){l=i(j,r);break}e||void 0===(j=i(j))||(l[h]=j)}return l};return u.get=u.set=u,u.defaults={},u.remove=function(e,r){return u(e,"",o(r,{expires:-1})),!u(e)},e&&(e.cookie=u,e.removeCookie=u.remove),u});

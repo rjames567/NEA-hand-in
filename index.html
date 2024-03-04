@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <title>Open Book</title>
+        <link rel="stylesheet" href="/css/sitewide.css">
+        <link rel="icon" type="image/x-icon" href = "/assets/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="top">
+                <ul>
+                    <li class="account-enter"><a id="sign-in-button">Sign In</a></li>
+                    <li class="pseudo-last account-enter"><a id="sign-up-button">Sign Up</a></li>
+                    <li class="hidden account-exit"><a id="sign-out-button">Sign Out</a></li>
+                </ul>
+            </nav>
+            <div class="title">
+                <img src="/assets/logo.png" style="height: 55px">
+            </div>
+            <nav class="bottom">
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Diary</a></li>
+                    <li><a>My Books</a></li>
+                    <li><a>Browse</a></li>
+                </ul>
+                <div class="search">
+                    <form class="search" action="">
+                        <input type="search" placeholder="Title, author, genre or ISBN" name="search-bar">
+                        <button type="submit" class="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="account-popups">
+            <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp -->
+            <div class="window" id="sign-up">
+                <form class="pop-up-content" action="">
+                    <div class="container">
+                        <h1>Sign Up <span class="page-sign-notice hidden">To View This Page</span></h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <div class="change-popup-message">
+                            <span>Have an account </span><a id="sign-in-button">sign in</a><span> instead.</span>
+                        </div>
+                        <hr>
+
+                        <label for="first-name"><b>First Name</b></label>
+                        <input type="text" placeholder="Enter First Name" name="first-name">
+
+                        <label for="surname"><b>Surname</b></label>
+                        <input type="text" placeholder="Enter Surname" name="surname">
+
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+
+                        <label for="password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+
+                        <label for="password-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+
+                        <p class="alert"></p> <!-- Filled in by the javascript as needed -->
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                        </label>
+
+                        <div class="clearfix">
+                            <button type="button" class="cancel-button">Cancel</button> <!-- Cancel button does same for both, so uses same class. -->
+                            <button type="submit" class="sign-up-button">Sign Up</button> <!-- Submit button does different things for each, so uses different class. -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="window" id="sign-in">
+                <form class="pop-up-content" action="">
+                    <div class="container">
+                        <h1>Sign In <span class="page-sign-notice hidden">To View This Page</span></h1>
+                        <p>Please fill in this form to sign in to your account.</p>
+                        <div class="change-popup-message">
+                            <span>If you do not have an account, please </span><a id="sign-up-button">create an account</a>
+                        </div>
+                        <hr>
+
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+
+                        <label for="password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+
+                        <p class="alert"></p> <!-- Filled in by the javascript as needed -->
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                        </label>
+
+                        <div class="clearfix">
+                            <button type="button" class="cancel-button">Cancel</button>
+                            <button type="submit" class="sign-in-button">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <main>
+
+        </main>
+    </body>
+    <script src="/javascript/jquery.js"></script>
+    <script src="/javascript/jquery.debounce.js"></script>
+    <script src="/javascript/js.cookie.js"></script>
+    <script src="/javascript/script.js"></script>
+</html>

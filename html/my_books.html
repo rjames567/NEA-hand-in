@@ -1,0 +1,64 @@
+<div class="my-books container">
+    <div class="navigation">
+        <ul>
+            <li class=template><a></a></li>
+        </ul>
+    </div>
+    <div class="entries">
+        <div class="book template">
+            <div class="content">
+                <div class="cover">
+                    <img src="">
+                </div>
+                <div class="main-content">
+                    <div class="top-row-container">
+                        <div class="title-container">
+                            <a class="book-button highlight title"></a>
+                            <a class="author highlight"></a>
+                        </div>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i> <!-- Class specification is not necessary - hardcoded in the JS-->
+                            </div>
+                            <div class="about-review">
+                                <span><b>Average Rating: </b><b class="average-review"></b> <em>(<span class="num-review"></span>)</em></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="synopsis">
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div> <!-- Div only so they are kept as block items by flex -->
+                        <span class="book-info"><b>Date Added: </b><span class="date-added"></span></span>
+                        <div class="book-genres">
+                            <span class="book-info"><b>Genres: </b></span>
+                            <ol> <!-- Ordered list as they are ordered by match strength -->
+                                <li class="template"><a class="genre-button highlight"></a></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="read"><i class="fa fa-plus"></i><span class="reading-list-manipulation"></span></button>
+                        <button class="delete"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="edit-lists">
+            <button class="create-list">New List</button>
+            <div class="add-container hidden">
+                <form class="new-list-entry" action="">
+                    <input type="text" placeholder="New list..." name="list-name">
+                    <button type="submit"><i class="fa fa-plus"></i></button>
+                </form>
+            </div>
+            <button class="delete-list">Delete List</button>
+        </div>
+    </div>
+</div>

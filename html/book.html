@@ -1,0 +1,243 @@
+<!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
+<div class="reading-list-selection hidden">
+    <div class="content">
+        <ul>
+            <li class="template"><button><i class="status"></i><i class="fa fa-check-circle-o hover"></i><span class="list-name"></span></button></li>
+        </ul>
+    </div>
+</div>
+<div class="book-about">
+    <div class="left">
+        <img class="cover" src="">
+        <button class="add-list">Add to list</button>
+        <a class="purchase_link" target="_blank">Buy the book</a> <!-- target="_blank" opens it in a new tab-->
+    </div>
+    <div class="right">
+        <h1 class="title"></h1>
+        <div class="top-container">
+            <div>
+                <h2><a class="author highlight"></a></h2>
+                <div class="book-details">
+                    <span>ISBN: <span class="isbn"></span></span>
+                    <span>Published: <span class="publish-date"></span></span>
+                </div>
+            </div>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p class="average-review"></p>
+            </div>
+        </div>
+        <div class="synopsis">
+        </div>
+        <div class="genres">
+            <h3>Genres: </h3>
+            <ol>
+                <li class="template"><a class="genre-button highlight"></a></li>
+            </ol>
+        </div>
+        <div class="author-about">
+            <div class="name">
+                <div>
+                    <h3><a class="author highlight"></a></h3>
+                    <p><span class="num-followers"></span> followers</p>
+                </div>
+                <div class="buttons">
+                    <button class="follow-author">Follow</button>
+                    <button class="unfollow-author hidden">Unfollow</button>
+                </div>
+            </div>
+            <div class="about">
+
+            </div>
+        </div>
+        <div class="book-stats">
+            <span><span class="num-want-read"><span class="value"></span> <span class="person-qualifier">people</span></span> want to read</span>
+            <span><span class="num-reading"><span class="value"></span> <span class="person-qualifier">people</span></span> currently reading</span>
+            <span><span class="num-read"><span class="value"></span> <span class="person-qualifier">people have</span></span> read</span>
+        </div>
+        <div class="similar-books">
+            <h1>Similar Books</h1>
+            <div class="book-summary template">
+                <a class="book-button"><img src="">
+                    <span class="title"></span>
+                    <span class="author"></span></a>
+            </div>
+        </div>
+        <div class="user-review">
+            <h3>Leave a Review</h3>
+            <div class="leave-review">
+                <form class="write-review" action="">
+                    <div class="overall-rating-entry"> <!-- overall-rating-entry ensures that it is not affected by selectors for non-inputs -->
+                        <p>Overall Rating:</p>
+                        <div class="rating-entry-container">
+                            <!-- https://stackoverflow.com/a/73854551 -->
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="plot-rating-entry">
+                        <p>Plot Rating:</p>
+                        <div class="rating-entry-container">
+                            <!-- https://stackoverflow.com/a/73854551 -->
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="character-rating-entry">
+                        <p>Character Rating:</p>
+                        <div class="rating-entry-container">
+                            <!-- https://stackoverflow.com/a/73854551 -->
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                            <button class="star"><i class="fa fa-star"></i></button>
+                        </div>
+                    </div>
+
+                    <label for="summary"><b>Summary</b></label>
+                    <input type="text" placeholder="Review summary..." name="summary">
+
+                    <!-- https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ -->
+                    <label for="thoughts"><b>Thoughts and Feelings</b></label>
+                    <div class="textarea-grow-container">
+                        <textarea name="thoughts" onInput="this.parentNode.dataset.replicatedValue = this.value" placeholder="Thoughts and feelings... "></textarea>
+                    </div>
+
+                    <p class="alert"></p>
+
+                    <button type="submit" class="submit-review">Publish</button>
+                </form>
+            </div>
+            <div class="existing-review hidden">
+                <div class="overall-rating">
+                    <p>Overall Rating:</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <div class="plot-rating">
+                    <p>Plot Rating:</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <div class="character-rating">
+                    <p>Character Rating:</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <p><b class="rating-summary">Hello</b></p>
+                <div class="review-body">
+
+                </div>
+                <div class="delete-container">
+                    <button class="delete-review"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <div class="average-review-container">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p class="average-review"></p>
+            </div>
+            <p><span class="num-review"></span> reviews</p>
+            <div class="review-distribution">
+                <div class="bar" id="5-star">
+                    <b>5 Stars: </b>
+                    <meter min="0" max="100" value=""></meter>
+                    <span class="number"></span>
+                    <em>(<span class="percentage"></span>%)</em>
+                </div>
+                <div class="bar" id="4-star">
+                    <b>4 Stars: </b>
+                    <meter min="0" max="100" value=""></meter>
+                    <span class="number"></span>
+                    <em>(<span class="percentage"></span>%)</em>
+                </div>
+                <div class="bar" id="3-star">
+                    <b>3 Stars: </b>
+                    <meter min="0" max="100" value=""></meter>
+                    <span class="number"></span>
+                    <em>(<span class="percentage"></span>%)</em>
+                </div>
+                <div class="bar" id="2-star">
+                    <b>2 Stars: </b>
+                    <meter min="0" max="100" value=""></meter>
+                    <span class="number"></span>
+                    <em>(<span class="percentage"></span>%)</em>
+                </div>
+                <div class="bar" id="1-star">
+                    <b>1 Stars: </b>
+                    <meter min="0" max="100" value=""></meter>
+                    <span class="number"></span>
+                    <em>(<span class="percentage"></span>%)</em>
+                </div>
+            </div>
+            <div class="user-reviews">
+                <div class="review template">
+                    <div class="user">
+                        <b class="username"></b>
+                        <p class="date"></p>
+                    </div>
+                    <div class="review-main">
+                        <div class="overall-rating">
+                            <p>Overall Rating:</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="plot-rating">
+                            <p>Plot Rating:</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="character-rating">
+                            <p>Character Rating:</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <b class="summary"></b>
+                        <div class="review-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

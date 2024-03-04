@@ -1,0 +1,135 @@
+<div class="new-diary-entry hidden">
+  <form class="new-entry" action="">
+    <select name="book">
+      <option selected="true" disabled="disabled" value="Select a book...">Select a book...</option>
+      <!-- Default to a placeholder item, which can then not be reselected afterwards -->
+      <!-- https://stackoverflow.com/a/22033973/21124864 -->
+      <option class="template"></option> <!-- Additional options need to go infront of this -->
+    </select>
+    <div class="overall-rating-entry"> <!-- overall-rating-entry ensures that it is not affected by selectors for non-inputs -->
+      <p>Overall Rating:</p>
+      <div class="rating-entry-container">
+        <!-- https://stackoverflow.com/a/73854551 -->
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+      </div>
+    </div>
+
+    <div class="plot-rating-entry">
+      <p>Plot Rating:</p>
+      <div class="rating-entry-container">
+        <!-- https://stackoverflow.com/a/73854551 -->
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+      </div>
+    </div>
+
+    <div class="character-rating-entry">
+      <p>Character Rating:</p>
+      <div class="rating-entry-container">
+        <!-- https://stackoverflow.com/a/73854551 -->
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+        <button class="star"><i class="fa fa-star"></i></button>
+      </div>
+    </div>
+
+    <label for="pages-read"><b>Pages Read</b></label>
+    <input type="number" placeholder="Pages read..." name="pages-read">
+
+    <label for="summary"><b>Summary</b></label>
+    <input type="text" placeholder="Review summary..." name="summary">
+
+    <label for="thoughts"><b>Thoughts and Feelings</b></label>
+    <textarea name="thoughts" placeholder="Thoughts and feelings... "></textarea>
+
+    <div class="checks">
+      <label><input type="checkbox" name="complete" style="margin-bottom:15px">Book completed?</label>
+      <label class="hidden"><input type="checkbox" name="review" style="margin-bottom:15px">Publish as a review?</label>
+    </div>
+
+    <p class="alert"></p>
+
+    <button type="submit" class="submit-entry">Submit</button>
+  </form>
+</div>
+<div class="entry-management">
+  <button class="new-entry"><i class="fa fa-plus"></i>Create new diary entry</button>
+</div>
+<div class="entries">
+  <div class="diary-entry template">
+    <hr>
+    <div class="content">
+      <div class="cover">
+        <img src="">
+      </div>
+      <div class="main-content">
+        <div class="top-row-container">
+          <div class="title-container">
+            <a class="book-button highlight book"></a>
+            <a class="author highlight"></a>
+          </div>
+          <div class="rating-container">
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <div class="about-review">
+              <span><b>Average Rating: </b><b class="average-review"></b> <em>(<span class="num-review"></span>)</em></span>
+            </div>
+          </div>
+        </div>
+        <div class="ratings">
+          <div class="overall-rating">
+            <p>Overall Rating:</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+
+          <div class="plot-rating">
+            <p>Plot Rating:</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+
+          <div class="character-rating">
+            <p>Character Rating:</p>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+        </div>
+        <b class="summary"></b>
+        <div class="thoughts">
+
+        </div>
+      </div>
+      <div class="right-content">
+        <div> <!-- Prevents flex space between making them move apart, but fixes button to the bottom -->
+          <span class="book-info"><b>Date Added: </b><span class="date-added"></span></span>
+          <span class="book-info"><b>Pages Read: </b><span class="num-pages-read"></span></span>
+        </div>
+        <button class="delete"><i class="fa fa-trash"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
